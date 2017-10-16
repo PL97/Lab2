@@ -1,0 +1,11 @@
+﻿10011	Marc Leuchner	50	Boston, America
+10012	俞栋	40	America
+10013	罗刚	42	中国
+10014	李俊阳	35	中国
+10015	《编程之美》小组	2	中国
+10016	Mehmed Kantardzic	45	America
+10017	James F.Kurose	50	America
+10018 	张晨曦	50	中国
+10019	哈尔滨工业大学数学系	98	中国
+10020	张岩	55	中国
+10021	张岩	60	中国

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+        "http://struts.apache.org/dtds/struts-2.5.dtd">
+<struts>
+
+   <constant name="struts.devMode" value="true" />
+   <constant name="struts.multipart.maxSize" value="1000000" />
+
+   <package name="helloworld" extends="struts-default">
+      <!-- input new book in the database -->
+      <action name = "uploadBook"
+      		  class = "hit.lab2.action.UpdateDatabase"
+      		  method = "execute">
+      		  <interceptor-ref name="fileUpload">
+  			<!-- 配置允许上传文件的类型,如果有多个类型用","隔开 -->  
+            <param name="fileUpload.allowedTypes">image/jpeg, image/gif, image/png, image/jpg
+            </param>  
+            
+            <!--配置允许上传文件的扩展名,如果有多个用","隔开  -->  
+            <!--param name="fileUpload.allowedExtensions">txt,excel,ppt,pptx,pdf,zip,rar,doc,docx</param-->      
+     
+             <!-- 配置允许上传的文件大小,最大为100000k -->  
+             <param name="maximumSize">102400000</param>
+	  		</interceptor-ref>
+	  		<!-- 配置struts2的默认拦截器栈  -->  
+	        <interceptor-ref name="defaultStack"></interceptor-ref>
+      		  <result name="success">/index.jsp</result>
+      </action>
+      
+      <!-- input new author into the database -->
+      <action name = "uploadAuthor"
+      		  class = "hit.lab2.action.UpdateDatabase"
+      		  method = "inputAuthor">
+      		  <result name="success">/index.jsp</result>
+      </action>
+      
+      <action name = "search" class = "hit.lab2.action.Search" method = "execute">
+      		<result name = "success">/search.jsp</result>
+      </action>
+      
+      <action name = "delete" class = "hit.lab2.action.Search" method = "delete">
+      		<result name = "success">/search.jsp</result>
+      </action>
+      
+      <action name = "modify" class = "hit.lab2.action.Search" method = "modify">
+      		<result name = "success">/search.jsp</result>
+      </action>
+   </package>
+   
+</struts>
